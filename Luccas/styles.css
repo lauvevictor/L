@@ -1,0 +1,113 @@
+/* Estilo principal */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fbeffb;
+  margin: 0;
+  font-family: "Poppins", system-ui;
+}
+
+.container {
+  text-align: center;
+}
+
+.letter {
+  font-size: 10rem;
+  color: #ff4081;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+p {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.message {
+  font-size: 1.5rem;
+  color: #333;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.letter:hover {
+  transform: scale(1.2);
+}
+
+.letter:hover + .message {
+  opacity: 1;
+  transition: 2s;
+}
+
+.letter {
+  transition: opacity 0.5 ease; /* Transição suave para a letra "L" */
+}
+
+/* Estilo dos corações */
+.hearts-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.heart {
+  width: 20px;
+  height: 20px;
+  background-color: #ff4081;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: float 3s infinite;
+  clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -70%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -100%) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.heart:nth-child(2) {
+  animation-duration: 4s;
+}
+
+.heart:nth-child(3) {
+  animation-duration: 5s;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+.letter {
+    font-size: 6rem; 
+  }
+}
+
+.message {
+font-size: 1.2rem; 
+  width: 90%; 
+  }
+
+@media (max-width: 480px) {
+  .letter {
+    font-size: 4rem; 
+  }
+}
+
+.message {
+
+font-size: 1rem; 
+width: 95%; 
+  }
+
+.hearts-container {
+margin-top: 10px; 
+  }
